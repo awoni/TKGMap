@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="content-language" content="ja" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Cache-Control" content="public" />
+    <meta name="keywords" content="徳島の交通状況,通行止,通行規制" />
+<meta name="descriptions" content="Googleが提供している交通状況と徳島県が公開している通行止めなどの通行規制情報を Google Maps APIを利用してマッシュアップしたものです。" />  
+<title>徳島の交通状況 Google Maps API 版</title>
+<link rel="stylesheet" href="kisei.css" type="text/css"/>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?language=ja&sensor=true&visual_refresh=true&region=JP"></script>
+<script type="text/javascript" src="gmap.js" charset="utf-8"></script>
+</head>
+<body onload="load()">
+<form action="#" class="form" id="id0" onsubmit="geocode(this.address.value); return false">
+<div id="mapmark">
+<table class="ht"><tr><td class="hp">徳島の交通状況 Google Maps API 版</td>
+<td class="hs">
+<div><a>更新日時:</a>
+<a id="ctime"></a>&nbsp;&nbsp;<a href="user.html" target="_blank">利用案内</a>
+</div>
+</td></tr></table></div>
+<div class="menu">
+<div>
+<select name="sb1" onchange="changeday(this.selectedIndex)">
+	<option selected="selected">本日の規制</option>
+	<option>今後の規制</option>
+	<option>災害規制</option>
+	<option>本日の全止等</option>
+</select>
+<a href="javascript:setMap(33.9,134.2,10)">全県</a>
+<a href="javascript:setMap(34.0,134.4,10)">東部</a>
+<a href="javascript:setMap(33.8,134.2,10)">南部</a>
+<a href="javascript:setMap(33.98,134.0,10)">西部</a>
+<select name="sb5" onchange="changecity(this.selectedIndex)">
+<option selected="selected">市町村選択</option>
+<option>徳島市</option>
+<option>鳴門市</option>
+<option>小松島市</option>
+<option>阿南市</option>
+<option>吉野川市</option>
+<option>阿波市</option>
+<option>美馬市 </option>
+<option>美馬市広域</option>
+<option>三好市 </option>
+<option>三好市広域 </option>
+<option>勝浦町 </option>
+<option>上勝町 </option>
+<option>佐那河内村 </option>
+<option>石井町 </option>
+<option>神山町 </option>
+<option>那賀町 </option>
+<option>那賀町広域</option>
+<option>美波町 </option>
+<option>牟岐町 </option>
+<option>海陽町 </option>
+<option>松茂町 </option>
+<option>北島町 </option>
+<option>藍住町 </option>
+<option>板野町 </option>
+<option>上板町 </option>
+<option>つるぎ町 </option>
+<option>東みよし町 </option>
+</select>
+<input type="text" size="30" name="address" title="住所へ移動" value="" />
+<input name="geobtn" type="submit" value="検索" />
+<a class="a1" href="#tablemark">一覧表示</a>
+</div>
+</div>
+<noscript><p><br />この情報をみるためには、現在お使いのブラウザーのJavascriptを有効にしてください。<br /></p></noscript>
+<div id="map"></div>
+<div class="menu">
+<strong>通行規制関連リンク</strong>
+<a href="http://www1.road.pref.tokushima.jp" target="_blank">県土防災情報</a> 
+<a href="http://www.skr.mlit.go.jp/info/regulate/kyk/its/" target="_blank">四国広域</a> 
+<a href="http://www.pref.kagawa.jp/road/www/" target="_blank">香川県</a> 
+<a href="http://kouhou.bousai.pref.kochi.jp/douro/EGX55_1.html" target="_blank">高知県</a> 
+<a href="http://road.pref.ehime.jp/hon_zen.html" target="_blank">愛媛県</a> 
+<span style="font-size:80%">ルートにはGoogleの交通状況を表示しています。緑は通常の速度を、赤や赤/黒は流れが遅いことを示しています。</span>
+</div>
+<p></p>
+<div class="menu" id="tablemark">
+<div>
+<select name="sb2" onchange="changeday1(this.selectedIndex)">
+	<option selected="selected">本日の規制</option>
+	<option>今後の規制</option>
+	<option>災害規制</option>
+	<option>本日の全止等</option>
+</select>
+<a class="a1">事務所選択</a>
+<select name="sb4" onchange="changeOffice(this[this.selectedIndex].value)">
+	<option value='0000' selected="selected">全県</option>
+	<option value='9218'>東部（徳島）</option>
+	<option value='9219'>東部（鳴門）</option>
+	<option value='9223'>東部（吉野川）</option>
+	<option value='9220'>南部（阿南）</option>
+	<option value='9221'>南部（那賀）</option>
+	<option value='9222'>南部（美波）</option>
+	<option value='9224'>西部（美馬）</option>
+	<option value='9225'>西部（三好）</option>
+</select>
+<a class="a1" href="javascript:printTable()">印刷用画面</a>
+<a class="a1" href="#mapmark">地図表示</a>
+</div>
+<div id="itiran"></div>
+</div></form></body>
+</html>
