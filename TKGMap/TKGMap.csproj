@@ -61,6 +61,40 @@
     <Compile Include="XyToBl.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Web\Data\kisei1.xml" />
+    <Content Include="Web\Data\kisei2.xml" />
+    <Content Include="Web\gmap.js" />
+    <Content Include="Web\gsi.html" />
+    <Content Include="Web\gsi.js" />
+    <Content Include="Web\index.html" />
+    <Content Include="Web\kisei.css" />
+    <Content Include="Web\printtable.html" />
+    <Content Include="Web\printtable.js" />
+    <Content Include="Web\traffic_icons\08_01.png" />
+    <Content Include="Web\traffic_icons\08_02.png" />
+    <Content Include="Web\traffic_icons\08_03.png" />
+    <Content Include="Web\traffic_icons\08_04.png" />
+    <Content Include="Web\traffic_icons\08_05.png" />
+    <Content Include="Web\traffic_icons\08_06.png" />
+    <Content Include="Web\traffic_icons\08_07.png" />
+    <Content Include="Web\traffic_icons\08_08.png" />
+    <Content Include="Web\traffic_icons\08_09.png" />
+    <Content Include="Web\traffic_icons\08_10.png" />
+    <Content Include="Web\traffic_icons\08_11.png" />
+    <Content Include="Web\traffic_icons\08_12.png" />
+    <Content Include="Web\traffic_icons\08_13.png" />
+    <Content Include="Web\traffic_icons\08_14.png" />
+    <Content Include="Web\traffic_icons\08_15.png" />
+    <Content Include="Web\traffic_icons\08_16.png" />
+    <Content Include="Web\traffic_icons\08_17.png" />
+    <Content Include="Web\traffic_icons\08_18.png" />
+    <Content Include="Web\traffic_icons\08_19.png" />
+    <Content Include="Web\traffic_icons\08_20.png" />
+    <Content Include="Web\traffic_icons\08_21.png" />
+    <Content Include="Web\traffic_icons\08_22.png" />
+    <Content Include="Web\traffic_icons\08_98.png" />
+    <Content Include="Web\traffic_icons\08_99.png" />
+    <Content Include="Web\user.html" />
     <None Include="App.config" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -74,9 +108,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Web\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>

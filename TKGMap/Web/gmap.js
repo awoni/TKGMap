@@ -26,7 +26,7 @@ var xml2;
 var headerHtml='<tr><th class="kh">路線名</th><th class="kh">規制区間</th><th class="kh">規制期間</th><th class="kh">規制理由</th><th class="kh">規制内容</th><th class="kh">時間帯</th>'+
  '<th class="kh">備考</th><th class="kh">問合先</th><th class="kl">地図</a></th></tr>';
 window.onresize=resizeApp;
-function setMap(lat, lng, num) { map.setCenter(new google.maps.LatLng(lat, lng), num) }
+function setMap(lat, lng, num) { map.setCenter(new google.maps.LatLng(lat, lng)); map.setZoom(num); }
 function resizeApp() {
 	var offsetTop = 30;
 	var mapElem = e("map");
