@@ -74,12 +74,12 @@ function load2() {
     document.getElementById('id0').sb5.selectedIndex = 0;
     setInterval("downloadXML1()", 600000);
 }
-// 地理院タイル 旧標準地図、徳島は新標準地図が見えない。整備できたら変更
+// 地理院タイル 新標準地図
 function GSIstd2012MapType() { }
 GSIstd2012MapType.prototype.tileSize = new google.maps.Size(256, 256);
-GSIstd2012MapType.prototype.maxZoom = 18; // ～11→新標準地図，12～18→旧標準地図
+GSIstd2012MapType.prototype.maxZoom = 18; // ～18→新標準地図
 GSIstd2012MapType.prototype.name = "地理院";
-GSIstd2012MapType.prototype.alt = "国土地理院の地図（在来版標準地図）を見る";
+GSIstd2012MapType.prototype.alt = "国土地理院の地図を見る";
 GSIstd2012MapType.prototype.getTile = function (tileCoord, zoom, ownerDocument) {
     var tile_x = tileCoord.x % Math.pow(2, zoom);
     if (tile_x < 0) {
@@ -88,20 +88,16 @@ GSIstd2012MapType.prototype.getTile = function (tileCoord, zoom, ownerDocument) 
     var img = ownerDocument.createElement("img");
     img.style.width = this.tileSize.width + "px";
     img.style.height = this.tileSize.height + "px";
-    if (zoom < 12) {
-        img.src = "http://cyberjapandata.gsi.go.jp/xyz/std/" + zoom + "/" + tile_x + "/" + tileCoord.y + ".png";
-    } else {
-        img.src = "http://cyberjapandata.gsi.go.jp/xyz/std2012/" + zoom + "/" + tile_x + "/" + tileCoord.y + ".png";
-    }
+    img.src = "http://cyberjapandata.gsi.go.jp/xyz/std/" + zoom + "/" + tile_x + "/" + tileCoord.y + ".png";
     return img;
 };
-// 地理院タイル 電子国土基本図（オルソ画像）
-function GSIortMapType() { }
-GSIortMapType.prototype.tileSize = new google.maps.Size(256, 256);
-GSIortMapType.prototype.maxZoom = 17; // ～14→標準地図，15～→オルソ画像
-GSIortMapType.prototype.name = "地理院写真";
-GSIortMapType.prototype.alt = "国土地理院の空中写真(オルソ画像)を見る";
-GSIortMapType.prototype.getTile = function (tileCoord, zoom, ownerDocument) {
+// 地理院タイル 新標準地図
+function GSIstd2012MapType() { }
+GSIstd2012MapType.prototype.tileSize = new google.maps.Size(256, 256);
+GSIstd2012MapType.prototype.maxZoom = 18; // ～18→新標準地図
+GSIstd2012MapType.prototype.name = "地理院";
+GSIstd2012MapType.prototype.alt = "国土地理院の地図を見る";
+GSIstd2012MapType.prototype.getTile = function (tileCoord, zoom, ownerDocument) {
     var tile_x = tileCoord.x % Math.pow(2, zoom);
     if (tile_x < 0) {
         tile_x += Math.pow(2, zoom);
@@ -109,13 +105,7 @@ GSIortMapType.prototype.getTile = function (tileCoord, zoom, ownerDocument) {
     var img = ownerDocument.createElement("img");
     img.style.width = this.tileSize.width + "px";
     img.style.height = this.tileSize.height + "px";
-    if (zoom < 12) {
-        img.src = "http://cyberjapandata.gsi.go.jp/xyz/std/" + zoom + "/" + tile_x + "/" + tileCoord.y + ".png";
-    } else if (zoom < 15) {
-        img.src = "http://cyberjapandata.gsi.go.jp/xyz/std2012/" + zoom + "/" + tile_x + "/" + tileCoord.y + ".png";
-    } else {
-        img.src = "http://cyberjapandata.gsi.go.jp/xyz/ort/" + zoom + "/" + tile_x + "/" + tileCoord.y + ".jpg";
-    }
+    img.src = "http://cyberjapandata.gsi.go.jp/xyz/std/" + zoom + "/" + tile_x + "/" + tileCoord.y + ".png";
     return img;
 };
 // 地理院タイル 国土画像情報（第１期）
