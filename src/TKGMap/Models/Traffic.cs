@@ -248,9 +248,6 @@ namespace TKGMap
                 var utility = new TransferUtility(s3Client, new TransferUtilityConfig());
                 await utility.UploadAsync(Path.Combine(AppInit.DataDir, "kisei1.xml"), AppInit.BucketName);
                 await utility.UploadAsync(Path.Combine(AppInit.DataDir, "kisei2.xml"), AppInit.BucketName);
-                await utility.UploadAsync(Path.Combine(AppInit.DataDir, "kiseia.xml"), AppInit.BucketName);
-                await utility.UploadAsync(Path.Combine(AppInit.DataDir, "kiseib.xml"), AppInit.BucketName);
-                await utility.UploadAsync(Path.Combine(AppInit.DataDir, "kiseic.xml"), AppInit.BucketName);
 
                 /* S3側で設定
                 s3Client.PutACL(new PutACLRequest
