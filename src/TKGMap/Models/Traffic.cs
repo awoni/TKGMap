@@ -193,6 +193,24 @@ namespace TKGMap
                 }
             }
 
+            //バグ対応
+            Bug(Path.Combine(AppInit.DataDir, "kisei1.xml"));
+            Bug(Path.Combine(AppInit.DataDir, "kisei2.xml"));
+        }
+
+        private void Bug(string path)
+        {
+            string xml;
+            using (var reader = File.OpenText(path))
+            {
+                xml = reader.ReadToEnd();
+            }
+            int p = xml.IndexOf("</drd>");
+            xml = xml.Substring(0, p + 6);
+            using (StreamWriter writer = new StreamWriter(File.Open(path, FileMode.Create)))
+            {
+                writer.Write(xml);
+            }
         }
 
         public void FileSave()
