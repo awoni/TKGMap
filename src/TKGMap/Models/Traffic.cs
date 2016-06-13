@@ -166,50 +166,13 @@ namespace TKGMap
                 }
             }
 
-            using (var writer = File.OpenWrite(Path.Combine(AppInit.DataDir, "kiseitmp1.xml")))
+            using (StreamWriter writer = new StreamWriter(File.Open(Path.Combine(AppInit.DataDir, "kisei1.xml"), FileMode.Create)))
             {
-                xmlDOCB.Save(writer);
+                writer.Write(xmlDOCB.OuterXml);
             }
-            using (var writer = File.OpenWrite(Path.Combine(AppInit.DataDir, "kiseitmp2.xml")))
+            using (StreamWriter writer = new StreamWriter(File.Open(Path.Combine(AppInit.DataDir, "kisei2.xml"), FileMode.Create)))
             {
-                xmlDOCC.Save(writer);
-            }
-
-            using (StreamReader reader = File.OpenText(Path.Combine(AppInit.DataDir, "kiseitmp1.xml")))
-            using (StreamWriter writer = File.CreateText(Path.Combine(AppInit.DataDir, "kisei1.xml")))
-            {
-                while (!reader.EndOfStream)
-                {
-                    writer.Write(reader.ReadLine().Trim());
-                }
-            }
-
-            using (StreamReader reader = File.OpenText(Path.Combine(AppInit.DataDir, "kiseitmp2.xml")))
-            using (StreamWriter writer = File.CreateText(Path.Combine(AppInit.DataDir, "kisei2.xml")))
-            {
-                while (!reader.EndOfStream)
-                {
-                    writer.Write(reader.ReadLine().Trim());
-                }
-            }
-
-            //バグ対応
-            Bug(Path.Combine(AppInit.DataDir, "kisei1.xml"));
-            Bug(Path.Combine(AppInit.DataDir, "kisei2.xml"));
-        }
-
-        private void Bug(string path)
-        {
-            string xml;
-            using (var reader = File.OpenText(path))
-            {
-                xml = reader.ReadToEnd();
-            }
-            int p = xml.IndexOf("</drd>");
-            xml = xml.Substring(0, p + 6);
-            using (StreamWriter writer = new StreamWriter(File.Open(path, FileMode.Create)))
-            {
-                writer.Write(xml);
+                writer.Write(xmlDOCC.OuterXml);
             }
         }
 
