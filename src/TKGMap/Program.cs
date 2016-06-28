@@ -8,7 +8,6 @@
 //徳島の道路状況 Google Maps API 版 ver0.5 by y.niji 2016/6/28 .Net Core に対応
 
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.PlatformAbstractions;
 using System;
 using System.IO;
 using System.Threading.Tasks;
