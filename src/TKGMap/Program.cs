@@ -10,6 +10,7 @@
 using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using TKGMap.Models;
 
@@ -19,9 +20,15 @@ namespace TKGMap
     {
         static void Main(string[] args)
         {
-            var builder = new ConfigurationBuilder()
+            string os = "x";
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                os = "linux";
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                os = "Windows";
+
+                var builder = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
-                .AddJsonFile($"appsettings.{System.Runtime.InteropServices.RuntimeInformation.OSDescription}.json", optional: true)
+                .AddJsonFile($"appsettings.{os}.json", optional: true)
                 .AddEnvironmentVariables();
 
             var configuration = builder.Build();
