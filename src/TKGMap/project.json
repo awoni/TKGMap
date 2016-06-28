@@ -11,7 +11,7 @@
   },
 
   "dependencies": {
-    "AWSSDK.S3": "3.2.4.1-beta",
+    "AWSSDK.S3": "3.2.5-beta",
     "Microsoft.Extensions.Configuration": "1.0.0",
     "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0",
     "Microsoft.Extensions.Configuration.Json": "1.0.0",
