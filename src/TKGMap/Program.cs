@@ -5,6 +5,7 @@
 //徳島県道路通行規制情報 Google Maps API 版 ver0.1 by y.niji 2006/10/29
 //徳島県道路通行規制情報 Google Maps API 版 ver0.34 by y.niji 2008/2/3
 //徳島の道路状況 Google Maps API 版 ver0.4 by y.niji 2013/11/15 Google Maps API Ver3に対応
+//徳島の道路状況 Google Maps API 版 ver0.5 by y.niji 2016/6/28 .Net Core に対応
 
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.PlatformAbstractions;
@@ -21,7 +22,7 @@ namespace TKGMap
         {
             var builder = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
-                .AddJsonFile($"appsettings.{PlatformServices.Default.Runtime.OperatingSystem}.json", optional: true)
+                .AddJsonFile($"appsettings.{System.Runtime.InteropServices.RuntimeInformation.OSDescription}.json", optional: true)
                 .AddEnvironmentVariables();
 
             var configuration = builder.Build();
