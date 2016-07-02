@@ -20,8 +20,6 @@ namespace TKGMap
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World from Core CLR!");
-            return;
             string os = "x";
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
                 os = "linux";
