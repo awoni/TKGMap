@@ -17,7 +17,6 @@
     "Microsoft.Extensions.Configuration.Json": "1.0.0",
     "Microsoft.Extensions.PlatformAbstractions": "1.0.0",
     "Microsoft.NETCore.App": {
-      "type": "platform",
       "version": "1.0.0"
     },
     "Newtonsoft.Json": "9.0.1",
@@ -37,5 +36,10 @@
       "appsettings.json",
       "appsettings.*.json"
     ]
+  },
+  "runtimes": {
+    "win10-x64": {},
+    "ubuntu.14.04-x64": {},
+    "centos.7-x64": {}
   }
 }
