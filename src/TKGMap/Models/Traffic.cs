@@ -187,7 +187,8 @@ namespace TKGMap
                 }
                 catch (Exception e1)
                 {
-                    LoggerClass.Error("ファイル保存エラー: " + e1.Message);
+                    Console.WriteLine("ファイル保存エラー: " + e1.Message);
+                    //LoggerClass.Error("ファイル保存エラー: " + e1.Message);
                 }
             }            
         }
@@ -241,15 +242,15 @@ namespace TKGMap
             }
             catch (Exception e1)
             {
-                LoggerClass.Error("EC2アップロードエラー: " + e1.Message);
+                Console.WriteLine("EC2アップロードエラー: " + e1.Message);
+                //LoggerClass.Error("EC2アップロードエラー: " + e1.Message);
             }
         }
 
         public void ProgLog(int num1, int num2)
         {
-            LoggerClass.Info(
-                string.Format("{0:yyyy/MM/dd HH:mm:ss} : 本日{1}件　今後{2}件"
-                    , DateTime.Now, num1, num2));
+            Console.WriteLine($"{DateTime.Now:yyyy/MM/dd HH:mm:ss} : 本日{num1}件　今後{num2}件");
+            //LoggerClass.Info($"{DateTime.Now:yyyy/MM/dd HH:mm:ss} : 本日{num1}件　今後{num2}件");
         }
     }
 }

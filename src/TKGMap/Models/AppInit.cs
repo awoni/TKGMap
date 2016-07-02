@@ -38,7 +38,7 @@ namespace TKGMap.Models
         public static void SetupIni(IConfigurationRoot configuration)
         {
             ApplicationEnvironment env = PlatformServices.Default.Application;
-            LoggerClass.Ini(env.ApplicationBasePath);
+            //LoggerClass.Ini(env.ApplicationBasePath);
 
             Host = configuration["Host"];
             OutputDir = configuration["OutputDir"];

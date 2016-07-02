@@ -10,6 +10,7 @@ namespace TKGMap.Models
 {
     class LoggerClass
     {
+        /*
         public static void Ini(string baseParh)
         {
             Log.Logger = new LoggerConfiguration()
@@ -26,5 +27,6 @@ namespace TKGMap.Models
         {
             Log.Error(message);
         }
+        */
     }
 }

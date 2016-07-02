@@ -32,7 +32,8 @@ namespace TKGMap.Models
                 }
                 else
                 {
-                    LoggerClass.Info("データの取得に失敗しました。" + e1.Message + " URL: " + url);
+                    Console.WriteLine("データの取得に失敗しました。" + e1.Message + " URL: " + url);
+                    //LoggerClass.Info("データの取得に失敗しました。" + e1.Message + " URL: " + url);
                     return null;
                 }
             }

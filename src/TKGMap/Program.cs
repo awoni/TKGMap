@@ -33,6 +33,7 @@ namespace TKGMap
 
             var configuration = builder.Build();
             AppInit.SetupIni(configuration);
+            
 
             Excute().Wait();
         }
@@ -58,7 +59,8 @@ namespace TKGMap
                 }
                 catch (Exception ex)
                 {
-                    LoggerClass.Error(ex.Message);
+                    Console.WriteLine(ex.Message);
+                    //LoggerClass.Error(ex.Message);
                 }
             }
         }
