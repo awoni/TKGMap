@@ -6,6 +6,7 @@
 //徳島県道路通行規制情報 Google Maps API 版 ver0.34 by y.niji 2008/2/3
 //徳島の道路状況 Google Maps API 版 ver0.4 by y.niji 2013/11/15 Google Maps API Ver3に対応
 //徳島の道路状況 Google Maps API 版 ver0.5 by y.niji 2016/6/28 .Net Core に対応
+//徳島の道路状況 Google Maps API 版 ver0.5 by y.niji 2016/7/5  AWS Lambda 対応版
 
 using Microsoft.Extensions.Configuration;
 using System;

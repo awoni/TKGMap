@@ -20,8 +20,6 @@
       "version": "1.0.0"
     },
     "Newtonsoft.Json": "9.0.1",
-    "Serilog.Extensions.Logging": "1.0.0",
-    "Serilog.Sinks.File": "2.0.0",
     "System.Xml.XmlDocument": "4.0.1",
     "System.Xml.XmlSerializer": "4.0.11"
   },

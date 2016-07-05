@@ -231,7 +231,7 @@ namespace TKGMap
                 await utility.UploadAsync(Path.Combine(AppInit.DataDir, "kisei1.xml"), AppInit.BucketName);
                 await utility.UploadAsync(Path.Combine(AppInit.DataDir, "kisei2.xml"), AppInit.BucketName);
 
-                /* S3側で設定
+                /* S3側で公開用に設定する必要がある
                 s3Client.PutACL(new PutACLRequest
                 {
                     BucketName = bucket,
