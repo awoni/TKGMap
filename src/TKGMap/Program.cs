@@ -51,9 +51,12 @@ namespace TKGMap
                     int num1;  //本日の規制数
                     int num2;  //今後の規制数
                     wcg.XMLChange(kiseia, kiseib, kiseic, out num1, out num2);
-                    wcg.FileSave();
-                    wcg.FtpPut();
-                    await wcg.AmazonS3Upload();
+                    if (num1 > 0)
+                    {
+                        wcg.FileSave();
+                        wcg.FtpPut();
+                        await wcg.AmazonS3Upload();
+                    }
                     wcg.ProgLog(num1, num2);
                 }
                 catch (Exception ex)
