@@ -34,7 +34,7 @@ namespace TKGMap
             var configuration = builder.Build();
             AppInit.SetupIni(configuration);
 
-            Excute().Wait();
+            Excute().GetAwaiter().GetResult();
         }
 
         static async Task Excute()
