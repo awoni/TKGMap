@@ -4,12 +4,7 @@
     <VersionPrefix>0.5.2</VersionPrefix>
     <TargetFramework>netcoreapp1.1</TargetFramework>
     <AssemblyName>TKGMapTest</AssemblyName>
-    <PackageId>TKGMapTest</PackageId>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
-    <RuntimeFrameworkVersion>1.1.1</RuntimeFrameworkVersion>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
   </PropertyGroup>
 
   <ItemGroup>
