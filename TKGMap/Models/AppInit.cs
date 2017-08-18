@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.Extensions.PlatformAbstractions;
 
 namespace TKGMap.Models
 {
@@ -37,8 +36,7 @@ namespace TKGMap.Models
 
         public static void SetupIni(IConfigurationRoot configuration)
         {
-            ApplicationEnvironment env = PlatformServices.Default.Application;
-            LoggerClass.Ini(env.ApplicationBasePath);
+            LoggerClass.Ini(AppContext.BaseDirectory);
 
             Host = configuration["Host"];
             OutputDir = configuration["OutputDir"];
