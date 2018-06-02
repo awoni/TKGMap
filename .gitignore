@@ -213,3 +213,4 @@ ModelManifest.xml
 
 logs/
 appsettings.*.json
+.idea/
